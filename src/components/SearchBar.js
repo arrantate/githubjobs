@@ -17,8 +17,8 @@ function SearchBar() {
         event.preventDefault()
         console.log(`Searching for ${searchQuery}`)
         setLoading(true)
-        // fetch(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${searchQuery}`)
-        fetch(`https://jobs.github.com/positions.json?description=${searchQuery}`)
+        const corsProxy = 'https://crossorigin.me/'
+        fetch(`${corsProxy}https://jobs.github.com/positions.json?description=${searchQuery}`)
             .then(response => response.json())
             .then(data => {
                 setSearchResults(data)
