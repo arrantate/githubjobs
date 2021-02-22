@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
-import { LoadingContext } from "../LoadingContext";
-import { SearchContext } from '../SearchContext';
+import { LoadingContext } from "../context/LoadingContext";
+import { SearchContext } from '../context/SearchContext';
 
 
 function SearchBar() {
+    // Context and State
     const [searchResults, setSearchResults] = useContext(SearchContext)
     const [loading, setLoading] = useContext(LoadingContext)
     const [searchQuery, setSearchQuery] = useState('')
 
-
+    // Search bar Logic
     const updateSearchQuery = (event) => {
         setSearchQuery(event.target.value)
     }
-
     const search = (event) => {
         event.preventDefault()
         console.log(`Searching for ${searchQuery}`)
@@ -22,16 +22,16 @@ function SearchBar() {
             .then(response => response.json())
             .then(data => {
                 setSearchResults(data)
+                setLoading(false)
                 console.log(data)
+                console.log('search complete')
             })
             .catch(error => console.log(error))
 
-        setLoading(false)
-        console.log('search complete')
         setSearchQuery('')
     }
 
-
+    // Render
     return (
         <div className="w-full mx-auto mt-2 mb-4 sm:mx-0 sm:mb-0 sm:mt-0 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:w-1/2 sm:h-full justify-center items-center block sm:flex">
             <form className="relative w-full" onSubmit={search}>

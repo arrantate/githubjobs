@@ -1,7 +1,7 @@
 import Nav from './components/Nav';
 import SearchResults from './components/SearchResults';
-import { LoadingProvider } from './LoadingContext';
-import { SearchProvider } from './SearchContext';
+import { LoadingProvider } from './context/LoadingContext';
+import { SearchProvider } from './context/SearchContext';
 
 function App() {
   const query = []

@@ -2,10 +2,10 @@ import React from 'react';
 
 
 function SearchResultsItem({ result }) {
+    // Show More Logic
     const showMoreToggle = event => {
         const description = [...event.target.parentElement.childNodes]
             .filter(node => (node.classList.contains('description')))[0]
-
         if (description.style.display === 'none') {
             description.style.display = 'block'
             event.target.innerText = '...Show Less'
@@ -15,6 +15,7 @@ function SearchResultsItem({ result }) {
         }
     }
 
+    // Render
     return (
         <div className="my-4 p-4 border bg-gray-900 border-black text-gray-300">
             <h3 className="text-green-600"><strong>{result.title}</strong></h3>
