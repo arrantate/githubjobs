@@ -29,7 +29,7 @@ function SearchResults() {
     return (
         <div className="container mx-auto border border-gray-100 border-opacity-0">
             <div className="my-3 text-right text-gray-400 font-bold">
-                <label className="mr-3" for="results-per-page">Results per page:</label>
+                <label className="mr-3" htmlFor="results-per-page">Results per page:</label>
                 <select className="bg-gray-600 mr-2" name="results-per-page" onChange={changeResultsPerPage}>
                     <option value="5">5</option>
                     <option value="10">10</option>
