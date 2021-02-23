@@ -21,7 +21,11 @@ function SearchBar() {
         fetch(`${corsProxy}https://jobs.github.com/positions.json?description=${searchQuery}`)
             .then(response => response.json())
             .then(data => {
-                setSearchResults(data)
+                if (data.length === 0) {
+                    setSearchResults([false])
+                } else {
+                    setSearchResults(data)
+                }
                 setLoading(false)
                 console.log(data)
                 console.log('search complete')
@@ -42,7 +46,7 @@ function SearchBar() {
                     value={searchQuery}
                     onChange={updateSearchQuery}
                 />
-                <button type="submit"><i className="fas fa-search bg-gray-800 p-4 border border-gray-600 rounded focus:outline-none"></i></button>
+                <button type="submit" className="bg-gray-800 p-5 border border-gray-600 rounded focus:outline-black"><i className="fas fa-search"></i></button>
             </form>
         </div>
     )

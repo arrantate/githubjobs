@@ -23,10 +23,12 @@ function SearchResults() {
     // Render
     if (loading) {
         return (
-            <h2 className="text-center text-gray-500 text-4xl my-7">Loading...</h2>
+            <p className="text-center text-gray-500 my-7">Loading...</p>
         )
     } else if (searchResults.length === 0) {
-        return (null)
+        return (<p className="text-center text-gray-500 my-7">Search for something to get started...</p>)
+    } else if (searchResults[0] === false) {
+        return (<p className="text-center text-gray-500 my-7">No Results found. Try again.</p>)
     }
 
     return (
