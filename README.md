@@ -8,4 +8,6 @@ The request is made via a cors-anywhere server which is hosted on heroku.
 
 --- 
 
-Further steps in the project will allow the user to save and delete jobs to and from their local storage for easy access.
+Further steps:
+- the project will allow the user to save and delete jobs to and from their local storage for easy access.
+- Cases need to be handles where the search returns no result
