@@ -34,14 +34,15 @@ function SearchBar() {
     // Render
     return (
         <div className="w-full mx-auto mt-2 mb-4 sm:mx-0 sm:mb-0 sm:mt-0 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:w-1/2 sm:h-full justify-center items-center block sm:flex">
-            <form className="relative w-full" onSubmit={search}>
+            <form className="flex relative w-full" onSubmit={search}>
                 <input
                     type="search"
-                    className="w-full max-w-full border border-gray-600 rounded-sm pr-4 pl-4 py-3 outline-none transition-colors duration-150 ease-in-out focus:border-blue-800 bg-gray-800"
+                    className="w-full max-w-full border border-gray-600 rounded pr-4 pl-4 py-3 outline-none transition-colors duration-150 ease-in-out focus:border-blue-800 bg-gray-800 mr-1"
                     placeholder="Search jobs..."
                     value={searchQuery}
                     onChange={updateSearchQuery}
                 />
+                <button type="submit"><i className="fas fa-search bg-gray-800 p-4 border border-gray-600 rounded focus:outline-none"></i></button>
             </form>
         </div>
     )

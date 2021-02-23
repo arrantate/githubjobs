@@ -25,7 +25,10 @@ function SearchResults() {
         return (
             <h2 className="text-center text-gray-500 text-4xl my-7">Loading...</h2>
         )
+    } else if (searchResults.length === 0) {
+        return (null)
     }
+
     return (
         <div className="container mx-auto border border-gray-100 border-opacity-0">
             <div className="my-3 text-right text-gray-400 font-bold">
